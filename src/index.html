@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hello from Electron renderer!</title>
+    <link rel="stylesheet" href="../src/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="data-pane">
+        <div class="data-blackboard">
+          <div class="black-board"></div>
+          <div class="data-item">
+            <span>Position: -----</span>
+            <span>Flux: -----</span>
+            <span>Start: -----</span>
+            <span>End: -----</span>
+            <span>Length: -----</span>
+            <span>Time: -----</span>
+          </div>
+        </div>
+        <div class="data-control">
+          <div class="left-pane">
+            <div class="group-pane">
+              <div class="radio-button-group">
+                <div class="radio-group">
+                  <div class="radio-button-group-item">
+                    <input type="radio" id="all" name="options" value="all" />
+                    <label for="all">ALL</label>
+                  </div>
+                  <div class="radio-button-group-item">
+                    <input type="radio" id="pos" name="options" value="pos" />
+                    <label for="pos">POS</label>
+                  </div>
+                  <div class="radio-button-group-item">
+                    <input
+                      type="radio"
+                      id="eight"
+                      name="options"
+                      value="eight"
+                    />
+                    <label for="eight">8</label>
+                  </div>
+                  <div class="radio-button-group-item">
+                    <input
+                      type="radio"
+                      id="sixteen"
+                      name="options"
+                      value="sixteen"
+                    />
+                    <label for="sixteen">16</label>
+                  </div>
+                </div>
+                <p>Bit Shit: &lt;0&gt;</p>
+              </div>
+              <div class="checkbox-group">
+                <div class="checkbox-group-item">
+                  <input type="checkbox" id="adjust_syncs" />
+                  <label for="adjust_syncs">Adjust Syncs</label>
+                </div>
+
+                <div class="checkbox-group-item">
+                  <input type="checkbox" id="show_syncs" />
+                  <label for="show_syncs">Show Syncs</label>
+                </div>
+
+                <div class="checkbox-group-item">
+                  <input type="checkbox" id="show_headers" />
+                  <label for="show_headers">Show Headers</label>
+                </div>
+
+                <div class="checkbox-group-item">
+                  <input type="checkbox" id="show_invalid" />
+                  <label for="show_invalid">Show Invalid</label>
+                </div>
+              </div>
+              <div class="skew-fill">
+                <div class="skew">
+                    <span>Skew</span>
+                    <input type="text" value="0" />
+                </div>
+                <button class="fill-button">Fill</button>
+                <div class="text-group">
+                    <input type="text" value="AA"/>
+                    <input type="text" value="0"/>
+                </div>
+              </div>
+            </div>
+            <div class="find-pattern">
+              <button class="find-button">Find Pattern</button>
+              <input type="text" value="FFFFFFFF52" />
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="right-pane">
+            <button class="delete-byte">Delete Byte</button>
+            <button class="index-track">Index Track</button>
+            <button class="insert-byte">Insert Byte</button>
+            <button class="find-invalid">Find Invalid</button>
+            <button class="flux-start">Set Flux Start</button>
+            <button class="flux-display">Flux Display</button>
+            <button class="flux-end">Set Flux End</button>
+            <button class="disk-layout" disabled>Disk Layout</button>
+          </div>
+        </div>
+      </div>
+      <div class="setting-pane">
+        <div class="device-setting"></div>
+        <div class="disk-type-setting"></div>
+        <div class="mode-setting"></div>
+        <div class="display-data-setting"></div>
+        <div class="options"></div>
+        <div class="media-controls"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./renderer.js"></script>
+</html>
